@@ -7,9 +7,9 @@ import algorithms.mazeGenerators.Maze3d;
 public interface Controller {
 	HashMap<String, Maze3d> maze3dMap = new HashMap<String, Maze3d>();
 
-	void mazeIsReady(String name);
+	public void mazeIsReady(String name);
 
-	void solutionIsReady(String mazeName);
+	public void solutionIsReady(String mazeName);
 
 	
 

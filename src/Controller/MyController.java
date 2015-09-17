@@ -151,10 +151,7 @@ public class MyController implements Controller {
 		viewCommandMap.put("Exit",new Command() 
 		{
 			@Override
-			//args[1] = mazeName
-			public void doCommand(String[] args) {
-					model.exit();
-			}
+			public void doCommand(String[] args) {model.exit();}
 		});
 		
 		view.setCommands(viewCommandMap);
@@ -164,16 +161,10 @@ public class MyController implements Controller {
 	public void setModel(Model model){this.model = model;}
 
 	@Override
-	public void mazeIsReady(String name) {
-		view.tellTheUserMazeIsReady(name);
-		
-	}
+	public void mazeIsReady(String name) {view.tellTheUserMazeIsReady(name);}
 
 	@Override
-	public void solutionIsReady(String mazeName) {
-		view.tellTheUserSolutionIsReady(mazeName);
-		
-	}
+	public void solutionIsReady(String mazeName) {view.tellTheUserSolutionIsReady(mazeName);}
 
 	
 

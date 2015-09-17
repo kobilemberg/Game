@@ -8,31 +8,31 @@ import algorithms.mazeGenerators.Position;
 import algorithms.search.Solution;
 
 public interface View {
-	void start();
+	public void start();
 
-	void printFilesAndDirectories(String filesAndDirOfPath);
+	public void printFilesAndDirectories(String filesAndDirOfPath);
 
-	void tellTheUserMazeIsReady(String name);
+	public void tellTheUserMazeIsReady(String name);
 
-	void printMazeToUser(Maze3d mazeWithName,String name);
+	public void printMazeToUser(Maze3d mazeWithName,String name);
 	
 	//args[1] = Axe,args[2] = index ,args[3] = Name
-	void printToUserCrossedArray(int[][] crossedArr, String axe, String index, String name);
+	public void printToUserCrossedArray(int[][] crossedArr, String axe, String index, String name);
 
 	//args[1] = name, args[2] = filename
-	void tellTheUserTheMazeIsSaved(String mazeName, String filename);
+	public void tellTheUserTheMazeIsSaved(String mazeName, String filename);
 
-	void tellTheUserTheMazeIsLoaded(String fileName, String mazeName);
+	public void tellTheUserTheMazeIsLoaded(String fileName, String mazeName);
 
-	void tellTheUsersizeOfMazeInRam(String mazeName,Double size);
+	public void tellTheUsersizeOfMazeInRam(String mazeName,Double size);
 
-	void tellTheUsersizeOfMazeInFile(String fileName, double sizeOfFile);
+	public void tellTheUsersizeOfMazeInFile(String fileName, double sizeOfFile);
 
-	void tellTheUserSolutionIsReady(String mazeName);
+	public void tellTheUserSolutionIsReady(String mazeName);
 
-	void printSolutionToUser(String mazeName,Solution<Position> solution);
+	public void printSolutionToUser(String mazeName,Solution<Position> solution);
 
-	void setCommands(HashMap<String, Command> viewCommandMap);
+	public void setCommands(HashMap<String, Command> viewCommandMap);
 	
 
 }

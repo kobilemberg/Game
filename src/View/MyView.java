@@ -23,9 +23,10 @@ public class MyView implements View {
 	{
 		super();
 		this.controller = controller;
-		
 	}
+	
 	public void setController(Controller controller){this.controller = controller;}
+	
 	@Override
 	public void start() {cli.start();}
 
@@ -47,60 +48,43 @@ public class MyView implements View {
 	}
 
 	@Override
-	public void printFilesAndDirectories(String filesAndDirOfPath) {
-		System.out.println(filesAndDirOfPath);
-		
-	}
+	public void printFilesAndDirectories(String filesAndDirOfPath) {System.out.println(filesAndDirOfPath);}
+	
 	@Override
-	public void tellTheUserMazeIsReady(String name) {
-		System.out.println("View: Maze "+name+" is Ready, you can take it!");
-	}
+	public void tellTheUserMazeIsReady(String name) {System.out.println("View: Maze "+name+" is Ready, you can take it!");}
+	
 	@Override
-	public void printMazeToUser(Maze3d mazeWithName,String name) {
-		System.out.println("Maze: "+name+"\n"+mazeWithName.toString());
-	}
+	public void printMazeToUser(Maze3d mazeWithName,String name) {System.out.println("Maze: "+name+"\n"+mazeWithName.toString());}
+	
 	@Override
 	public void printToUserCrossedArray(int[][] crossedArr, String axe, String index, String name) {
 		System.out.println("Crossed maze: "+name+ " by axe: "+axe+" with index: "+index);
 		printArr(crossedArr);
 	}
+	
 	@Override
-	public void tellTheUserTheMazeIsSaved(String mazeName, String filename) {
-		System.out.println("Maze: "+mazeName+ " saved to:"+ filename);
-		
-	}
+	public void tellTheUserTheMazeIsSaved(String mazeName, String filename) {System.out.println("Maze: "+mazeName+ " saved to:"+ filename);}
+	
 	@Override
-	public void tellTheUserTheMazeIsLoaded(String fileName, String mazeName) {
-		System.out.println("Maze: "+mazeName+ " has been loaded from:"+ fileName);
-		
-	}
+	public void tellTheUserTheMazeIsLoaded(String fileName, String mazeName) {System.out.println("Maze: "+mazeName+ " has been loaded from:"+ fileName);}
+	
 	@Override
-	public void tellTheUsersizeOfMazeInRam(String mazeName,Double size) {
-		System.out.println("The size of maze: "+mazeName+" in ram memory is:" +size);
-		
-	}
+	public void tellTheUsersizeOfMazeInRam(String mazeName,Double size) {System.out.println("The size of maze: "+mazeName+" in ram memory is:" +size);}
+	
 	@Override
-	public void tellTheUsersizeOfMazeInFile(String fileName, double sizeOfFile) {
-		System.out.println("The size of file: "+fileName+" is: "+sizeOfFile);
-		
-	}
+	public void tellTheUsersizeOfMazeInFile(String fileName, double sizeOfFile) {System.out.println("The size of file: "+fileName+" is: "+sizeOfFile);	}
+	
 	@Override
-	public void tellTheUserSolutionIsReady(String mazeName) {
-		System.out.println("View: Maze "+mazeName+" is Ready, you can take it!");
-	}
+	public void tellTheUserSolutionIsReady(String mazeName) {System.out.println("View: Maze "+mazeName+" is Ready, you can take it!");}
+	
 	@Override
 	public void printSolutionToUser(String mazeName,Solution<Position> solution) {
 		System.out.println("Solution of: "+mazeName+"\n");
-		for (State<Position> p: solution.getSolution())
-		{
-			System.out.println(p.getCameFromAction() + " To: "+p.toString());
-		}
-		
+		for (State<Position> p: solution.getSolution()){System.out.println(p.getCameFromAction() + " To: "+p.toString());}
 	}
+	
 	@Override
-	public void setCommands(HashMap<String, Command> viewCommandMap) {
-		this.viewCommandMap = viewCommandMap;	
-	}
+	public void setCommands(HashMap<String, Command> viewCommandMap) {this.viewCommandMap = viewCommandMap;	}
 	
 	
 }

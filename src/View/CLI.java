@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Scanner;
-
 import Controller.Command;
 
 public class CLI implements Runnable
