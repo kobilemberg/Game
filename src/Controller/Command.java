@@ -1,7 +1,8 @@
 package Controller;
 
-public interface Command {
-	void doCommand();
-	//sdf
 
-}
+
+public interface Command {
+
+	void doCommand(String[] args);
+	}
