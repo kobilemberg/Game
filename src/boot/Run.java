@@ -1,4 +1,4 @@
-package boot;
+package boot; 
 
 import Controller.MyController;
 import Model.MyModel;
