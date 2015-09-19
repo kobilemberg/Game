@@ -1,6 +1,10 @@
 package View;
 
 
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.util.HashMap;
 import Controller.Command;
 import Controller.Controller;
@@ -13,6 +17,7 @@ public class MyView implements View {
 	Controller controller;
 	CLI cli;
 	HashMap<String, Command> viewCommandMap;
+	private String cliMenu;
 
 	
 	public MyView()
@@ -23,9 +28,16 @@ public class MyView implements View {
 	{
 		super();
 		this.controller = controller;
+		cli = new CLI(new BufferedReader(new InputStreamReader(System.in)), new PrintWriter(System.out),viewCommandMap);
 	}
 	
-	public void setController(Controller controller){this.controller = controller;}
+	public void setController(Controller controller)
+	{this.controller = controller;
+	cli = new CLI(new BufferedReader(new InputStreamReader(System.in)), new PrintWriter(System.out),viewCommandMap);
+	if(cliMenu!=null)
+		cli.cliMenue = cliMenu;
+	
+	}
 	
 	@Override
 	public void start() {cli.start();}
@@ -69,13 +81,13 @@ public class MyView implements View {
 	public void tellTheUserTheMazeIsLoaded(String fileName, String mazeName) {System.out.println("Maze: "+mazeName+ " has been loaded from:"+ fileName);}
 	
 	@Override
-	public void tellTheUsersizeOfMazeInRam(String mazeName,Double size) {System.out.println("The size of maze: "+mazeName+" in ram memory is:" +size);}
+	public void tellTheUsersizeOfMazeInRam(String mazeName,Double size) {System.out.println("The size of maze: "+mazeName+" in ram memory is:" +size+"b");}
 	
 	@Override
-	public void tellTheUsersizeOfMazeInFile(String fileName, double sizeOfFile) {System.out.println("The size of file: "+fileName+" is: "+sizeOfFile);	}
+	public void tellTheUsersizeOfMazeInFile(String fileName, double sizeOfFile) {System.out.println("The size of file: "+fileName+" is: "+sizeOfFile+"b");	}
 	
 	@Override
-	public void tellTheUserSolutionIsReady(String mazeName) {System.out.println("View: Maze "+mazeName+" is Ready, you can take it!");}
+	public void tellTheUserSolutionIsReady(String mazeName) {System.out.println("Solution for "+mazeName+" is Ready, you can take it!");}
 	
 	@Override
 	public void printSolutionToUser(String mazeName,Solution<Position> solution) {
@@ -84,7 +96,20 @@ public class MyView implements View {
 	}
 	
 	@Override
-	public void setCommands(HashMap<String, Command> viewCommandMap) {this.viewCommandMap = viewCommandMap;	}
+	public void setCommands(HashMap<String, Command> viewCommandMap) 
+	{this.viewCommandMap = viewCommandMap;
+		if(cliMenu!=null)
+			cli.cliMenue = cliMenu;
+	}
+	@Override
+	public void setCommandsMenu(String cliMenu) {
+		this.cliMenu = cliMenu;
+	}
+	@Override
+	public void errorNoticeToUser(String s) {
+		System.out.println("Error:\n"+s);
+		
+	}
 	
 	
 }

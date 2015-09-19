@@ -55,4 +55,8 @@ public interface Model {
 
 	public void exit();
 
+
+
+	public boolean isLoaded(String mazeName);
+
 }

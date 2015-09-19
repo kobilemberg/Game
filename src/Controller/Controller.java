@@ -11,6 +11,8 @@ public interface Controller {
 
 	public void solutionIsReady(String mazeName);
 
+	public void errorNoticeToViewr(String s);
+
 	
 
 	

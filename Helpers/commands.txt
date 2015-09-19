@@ -1,0 +1,11 @@
+generate 3d maze kobi MyMaze3dGenerator 3 3 3
+display kobi
+display cross section by X 1 for kobi
+save maze kobi 1.txt
+load maze 1.txt kobi
+maze size kobi
+file size kobi
+solve kobi A*
+solve kobi BFS
+display solution kobi
+exit

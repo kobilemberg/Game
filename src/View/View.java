@@ -33,6 +33,10 @@ public interface View {
 	public void printSolutionToUser(String mazeName,Solution<Position> solution);
 
 	public void setCommands(HashMap<String, Command> viewCommandMap);
+
+	public void setCommandsMenu(String cliMenu);
+
+	public void errorNoticeToUser(String s);
 	
 
 }
