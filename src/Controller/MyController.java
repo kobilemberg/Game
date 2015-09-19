@@ -42,6 +42,7 @@ public class MyController implements Controller {
 					model.generateMazeWithName(args[0],args[1], args[2], args[3],args[4]);
 				} catch (Exception e) {
 					System.out.println("Wrong parameters, Usage:generate 3d maze <name> <generator> <other params>");
+					e.printStackTrace();
 				}
 				 
 			}

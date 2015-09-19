@@ -35,7 +35,7 @@ public class MyView implements View {
 	{this.controller = controller;
 	cli = new CLI(new BufferedReader(new InputStreamReader(System.in)), new PrintWriter(System.out),viewCommandMap);
 	if(cliMenu!=null)
-		cli.cliMenue = cliMenu;
+		cli.cliMenu = cliMenu;
 	
 	}
 	
@@ -99,7 +99,7 @@ public class MyView implements View {
 	public void setCommands(HashMap<String, Command> viewCommandMap) 
 	{this.viewCommandMap = viewCommandMap;
 		if(cliMenu!=null)
-			cli.cliMenue = cliMenu;
+			cli.cliMenu = cliMenu;
 	}
 	@Override
 	public void setCommandsMenu(String cliMenu) {
