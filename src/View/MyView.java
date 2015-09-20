@@ -36,6 +36,12 @@ public class MyView implements View {
 	{
 		super();
 	}
+	public MyView(BufferedReader in, PrintWriter out)
+	{
+		super();
+		this.in = in;
+		this.out=out;
+	}
 	public MyView(Controller controller)
 	{
 		super();
