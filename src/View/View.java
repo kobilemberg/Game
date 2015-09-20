@@ -1,5 +1,10 @@
 package View;
-
+/**
+ * @author Kobi Lemberg, Alon Abadi
+ * @version 1.0
+ * <h1> View </h1>
+ * View interface represent a generally view layer of MVC
+ */
 import java.util.HashMap;
 
 import Controller.Command;

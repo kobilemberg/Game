@@ -1,5 +1,11 @@
 package Controller;
-
+/**
+ * @author Kobi Lemberg, Alon Abadi
+ * @version 1.0
+ * <h1> MyController </h1>
+ * MyController class implements Controller interface, 
+ * class goal is to act as MVC controller
+ */
 import java.util.HashMap;
 
 import Model.Model;
@@ -11,6 +17,14 @@ public class MyController implements Controller {
 	
 	View view;
 	Model model;
+
+//Constructors
+/**
+* Instantiates a new  my own controller with given view and model.
+* @param view View represent the view layer
+* @param model Model represent the model layer
+* @return new MyController as instance
+* */
 	public MyController(View view, Model model) {
 		super();
 		this.view = view;
@@ -189,24 +203,45 @@ public class MyController implements Controller {
 
 		String cliMenu=new String();
 		cliMenu+= "1:	dir <path>\n";
-		cliMenu+= "2:	generate 3d maze <name> <generator> <other params>\n";
-		cliMenu+= "3:	display <name>\n";
-		cliMenu+= "4:	display cross section by {X,Y,Z} <index> for <name>\n";
-		cliMenu+= "5:	save maze <name> <file name>\n";
-		cliMenu+= "6:	load maze <file name> <name>\n";
-		cliMenu+= "7:	maze size <name>\n";
-		cliMenu+= "8:	file size <name>\n";
-		cliMenu+= "9:	solve <name> <algorithm>\n";
-		cliMenu+= "10:	display solution <name>\n";
+		cliMenu+= "2:	generate 3d maze <Maze name> <MyMaze3dGenerator\\SimpleMaze3dGenerator> <X> <Y> <Z>\n";
+		cliMenu+= "3:	display <Maze name>\n";
+		cliMenu+= "4:	display cross section by {X,Y,Z} <index> for <Maze name>\n";
+		cliMenu+= "5:	save maze <Maze name> <File name>\n";
+		cliMenu+= "6:	load maze <File name> <Maze name>\n";
+		cliMenu+= "7:	maze size <Maze name>\n";
+		cliMenu+= "8:	file size <File name>\n";
+		cliMenu+= "9:	solve <Maze name> <A*\\BFS>\n";
+		cliMenu+= "10:	display solution <Maze name>\n";
 		cliMenu+= "11:	exit\n";
 		
 		view.setCommands(viewCommandMap);
 		view.setCommandsMenu(cliMenu);
 	}
-	
-	public void setView(View view){this.view = view;}
-	public void setModel(Model model){this.model = model;}
 
+//Getters and setters
+	
+	/**
+	 * This method will set controller view layer
+	 * @param view View represent the view layer
+	 */
+	public void setView(View view){this.view = view;}
+	/**
+	* This method will set controller model layer
+	* @param model Model represent the model layer
+	*/
+	public void setModel(Model model){this.model = model;}
+	/**
+	* This method will return the controller view layer
+	* @return View instance represent the view layer of the controller
+	*/
+	public View getView(){return view;}
+	/**
+	* This method will return the controller model layer
+	* @return Model instance represent the Model layer of the controller
+	*/
+	public Model getModel(){return model;}
+	
+//Overrides and functionality
 	@Override
 	public void mazeIsReady(String name) {view.tellTheUserMazeIsReady(name);}
 
@@ -214,10 +249,7 @@ public class MyController implements Controller {
 	public void solutionIsReady(String mazeName) {view.tellTheUserSolutionIsReady(mazeName);}
 
 	@Override
-	public void errorNoticeToViewr(String s) {
-		view.errorNoticeToUser(s);
-		
-	}
+	public void errorNoticeToViewr(String s) {view.errorNoticeToUser(s);}
 
 	
 

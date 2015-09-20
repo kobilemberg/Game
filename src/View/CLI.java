@@ -1,5 +1,12 @@
 package View;
 
+/**
+ * @author Kobi Lemberg, Alon Abadi
+ * @version 1.0
+ * <h1> CLI </h1>
+ * CLI class goal is to handle user command line requests. 
+ */
+
 import java.io.BufferedReader;
 import java.io.PrintWriter;
 import java.util.Arrays;
@@ -8,7 +15,6 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Scanner;
-
 import Controller.Command;
 
 public class CLI implements Runnable
@@ -18,7 +24,10 @@ PrintWriter out;
 HashMap<String,Command> commands;
 HashSet<String> commandsStrings;
 String cliMenu;
-
+//Constructors
+	/**
+	 * Instantiates a new  my own maze3d generator.
+	 */
 	public CLI(BufferedReader in, PrintWriter out, HashMap<String,Command> commands) {
 		super();
 		this.in = in;

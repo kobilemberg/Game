@@ -1,5 +1,11 @@
 package Model;
-
+/**
+ * @author Kobi Lemberg, Alon Abadi
+ * @version 1.0
+ * <h1> MyModel </h1>
+ * MyModel class implements Model interface, 
+ * class goal is to act as MVC Model and perform all business logic calculations.
+ */
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -29,7 +35,10 @@ public class MyModel implements Model {
 	
 	
 	
-	
+	//Constructors
+		/**
+		 * Instantiates a new  my own maze3d generator.
+		 */
 	public MyModel()
 	{
 		super();

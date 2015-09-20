@@ -1,5 +1,12 @@
 package View;
 
+/**
+ * @author Kobi Lemberg, Alon Abadi
+ * @version 1.0
+ * <h1> MyView </h1>
+ * MyView class implements View interface, 
+ * class goal is to act as MVC View layer and to display applications to end-user.
+ */
 
 
 import java.io.BufferedReader;
@@ -19,7 +26,10 @@ public class MyView implements View {
 	HashMap<String, Command> viewCommandMap;
 	private String cliMenu;
 
-	
+	//Constructors
+		/**
+		 * Instantiates a new  my own maze3d generator.
+		 */
 	public MyView()
 	{
 		super();
