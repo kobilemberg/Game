@@ -54,13 +54,14 @@ String cliMenu;
 		{
 			String commandString = new String(inputLineString); //Building the command
 			String commandArgs   = new String(); //The commands arguments 
+			int i = 0;
 			
 			boolean foundCommand = false;
 			// Go through the input string backwards, and find the longest command possible. 
 			// Once found, the loop stops, and sends the command with the arguments found.
 			// flag: foundCommand
 			while(!foundCommand){
-				commandString.trim(); 
+				commandString.trim();
 				if (commands.containsKey(commandString))
 				{
 					foundCommand = true;
@@ -85,8 +86,9 @@ String cliMenu;
 					}
 					else //remove the parameter and add to parameters string
 					{
-						commandString = commandString.substring(0, commandString.length()-inputLineAsArray[inputLineAsArray.length-1].length()-1);
-						commandArgs+=inputLineAsArray[inputLineAsArray.length-1]+" ";
+						i++;
+						commandString = commandString.substring(0, commandString.length()-inputLineAsArray[inputLineAsArray.length-i].length()-1);
+						commandArgs+=inputLineAsArray[inputLineAsArray.length-i]+" ";
 					}
 				}
 			}
