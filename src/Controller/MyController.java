@@ -216,6 +216,7 @@ public class MyController implements Controller {
 		
 		view.setCommands(viewCommandMap);
 		view.setCommandsMenu(cliMenu);
+		
 	}
 
 //Getters and setters

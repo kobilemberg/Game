@@ -135,6 +135,8 @@ public class MyView implements View {
 	@Override
 	public void setCommandsMenu(String cliMenu) {
 		this.cliMenu = cliMenu;
+		if(cli!=null)
+			cli.setCLIMenu(cliMenu);
 	}
 	@Override
 	public void errorNoticeToUser(String s) {
