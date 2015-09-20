@@ -104,7 +104,7 @@ String cliMenu;
 			
 			//if we didn't see command after removing all the words we will notice
 			if(!commands.containsKey(commandString))
-				{System.out.println("Enter a valid command. Enter command 'menu' if you don't remember the commands. ");}
+				{out.println("Enter a valid command. Enter command 'menu' if you don't remember the commands. ");}
 				
 			inputLineString = ""; 
 			// Input command. 
@@ -113,7 +113,7 @@ String cliMenu;
 				//Print Menu (cliMenu). 
 				if (!cliMenu.equals(""))
 				{
-					System.out.println("Please enter the next command: ");
+					out.println("Please enter the next command: ");
 					//System.out.println(cliMenu);
 				}
 				
@@ -128,7 +128,7 @@ String cliMenu;
 			}
 		}
 		commands.get(inputLineAsArray[0]).doCommand(inputLineAsArray);
-		System.out.println("Exiting from the program...Bye!");
+		out.println("Exiting from the program...Bye!");
 	}
 	@Override 
 	/**
@@ -136,7 +136,7 @@ String cliMenu;
 	 * @see java.lang.Runnable#run()
 	 */
 	public void run() {
-		System.out.println("Running Run() Method of CLI class" );
+		out.println("Running Run() Method of CLI class" );
 		start();	
 	}
 	
@@ -186,8 +186,8 @@ String cliMenu;
 		//Print Menu (cliMenu). 
 		if (!cliMenu.equals(""))
 		{
-			System.out.println("	******************************Menu******************************");
-			System.out.println(cliMenu);
+			out.println("	******************************Menu******************************");
+			out.println(cliMenu);
 		}
 		else
 		{
