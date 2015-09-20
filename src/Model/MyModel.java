@@ -36,21 +36,32 @@ public class MyModel implements Model {
 	
 	
 	//Constructors
-		/**
-		 * Instantiates a new  my own maze3d generator.
-		 */
+	/**
+	* Instantiates a new  my own model.
+	*/
 	public MyModel()
 	{
 		super();
 	}
+	/**
+	* Instantiates a new  my own model with given controller
+	* @param controller Controller represent the controller layer to work with
+	* @return new MyModel as instance
+	*/
 	public MyModel(Controller controller)
 	{
 		super();
 		this.controller = controller;
 	}
+//Getters and setters
+	/**
+	* this method will set the controller to work with
+	* @param controller Controller represent the controller layer to work with
+	*/
 	public void setController(Controller controller){this.controller = controller;}
 
-
+//Functionality
+	@Override
 	public String dir(String dir) throws NullPointerException
 	{
 		File folder = new File(dir);
@@ -324,7 +335,10 @@ public class MyModel implements Model {
 	
 	
 	
-	
+	/**
+	* Ihis method will notice to controller an error messege
+	* @param s String represent the error to notice
+	*/
 	public void errorNoticeToControlelr(String s)
 	{
 		controller.errorNoticeToViewr(s);
