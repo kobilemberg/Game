@@ -62,41 +62,41 @@ public interface View {
 	public void tellTheUserTheMazeIsLoaded(String fileName, String mazeName);
 	
 	/**
-	 * 
-	 * @param mazeName
-	 * @param size
+	 * Receive the size and display it to the user. 
+	 * @param mazeName - the name of the maze
+	 * @param size - the size of the maze
 	 */
 	public void tellTheUsersizeOfMazeInRam(String mazeName,Double size);
 	/**
-	 * 
-	 * @param fileName
-	 * @param sizeOfFile
+	 * Receive the file name and file size, and display them to the user.
+	 * @param fileName - file name 
+	 * @param sizeOfFile - file size
 	 */
 	public void tellTheUsersizeOfMazeInFile(String fileName, double sizeOfFile);
 	/**
-	 * 
-	 * @param mazeName
+	 * Notify the user when the solution is ready. 
+	 * @param mazeName - maze name. 
 	 */
 	public void tellTheUserSolutionIsReady(String mazeName);
 	/**
-	 * 
-	 * @param mazeName
-	 * @param solution
+	 * Receive maze solution and print it to the user. 
+	 * @param mazeName - maze name
+	 * @param solution - maze solution
 	 */
 	public void printSolutionToUser(String mazeName,Solution<Position> solution);
 	/**
-	 * 
-	 * @param viewCommandMap
+	 * Set the commands hash map and cli.menu
+	 * @param viewCommandMap - the command map as created in MyController
 	 */
 	public void setCommands(HashMap<String, Command> viewCommandMap);
 	/**
-	 * 
-	 * @param cliMenu
+	 * Set the cliMenu to be the menu itself. 
+	 * @param cliMenu - The menu to be put in cliMenu
 	 */
 	public void setCommandsMenu(String cliMenu);
 	/**
-	 * 
-	 * @param s
+	 * Display a generic error message to the user 
+	 * @param s - the error to display (String). 
 	 */
 	public void errorNoticeToUser(String s);
 	
