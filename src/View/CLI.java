@@ -137,6 +137,7 @@ String cliMenu;
 	 */
 	public void run() {
 		out.println("Running Run() Method of CLI class" );
+		out.flush();
 		start();	
 	}
 	
@@ -178,7 +179,9 @@ String cliMenu;
 	 * This method will set the cli menu
 	 * @param cliMenu represent the menu of the cli
 	 */
-	public void setCLIMenu(String cliMenu) {this.cliMenu=cliMenu;}
+	public void setCLIMenu(String cliMenu) {this.cliMenu=cliMenu;
+	//System.out.println(cliMenu);
+	}
 	/**
 	 * This method will print the cliMenu to the screen
 	 */
@@ -188,6 +191,7 @@ String cliMenu;
 		{
 			out.println("	******************************Menu******************************");
 			out.println(cliMenu);
+			out.flush();
 		}
 		else
 		{

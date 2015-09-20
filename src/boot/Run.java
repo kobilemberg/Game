@@ -14,6 +14,7 @@ public class Run {
 	{
 		// TODO Auto-generated method stub
 		MyView view = new MyView(new BufferedReader(new InputStreamReader(System.in)),new PrintWriter(System.out));
+		//MyView view = new MyView(System.in, System.out);
 		MyModel model = new MyModel();
 		MyController controller = new MyController(view, model);
 		model.setController(controller);

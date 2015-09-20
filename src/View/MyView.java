@@ -86,42 +86,64 @@ public class MyView implements View {
 			strOfMazeMatrix+="}\n";
 		}
 		out.println(strOfMazeMatrix);
+		out.flush();
 	}
 
 	@Override
 	public void printFilesAndDirectories(String filesAndDirOfPath) {out.println(filesAndDirOfPath);}
 	
 	@Override
-	public void tellTheUserMazeIsReady(String name) {out.println("View: Maze "+name+" is Ready, you can take it!");}
+	public void tellTheUserMazeIsReady(String name) {
+		out.println("View: Maze "+name+" is Ready, you can take it!");
+		out.flush();
+	}
 	
 	@Override
-	public void printMazeToUser(Maze3d mazeWithName,String name) {out.println("Maze: "+name+"\n"+mazeWithName.toString());}
+	public void printMazeToUser(Maze3d mazeWithName,String name) {
+		out.println("Maze: "+name+"\n"+mazeWithName.toString());
+		out.flush();
+	}
 	
 	@Override
 	public void printToUserCrossedArray(int[][] crossedArr, String axe, String index, String name) {
 		out.println("Crossed maze: "+name+ " by axe: "+axe+" with index: "+index);
+		out.flush();
 		printArr(crossedArr);
 	}
 	
 	@Override
-	public void tellTheUserTheMazeIsSaved(String mazeName, String filename) {out.println("Maze: "+mazeName+ " saved to:"+ filename);}
+	public void tellTheUserTheMazeIsSaved(String mazeName, String filename) {
+		out.println("Maze: "+mazeName+ " saved to:"+ filename);
+		out.flush();
+	}
 	
 	@Override
-	public void tellTheUserTheMazeIsLoaded(String fileName, String mazeName) {out.println("Maze: "+mazeName+ " has been loaded from:"+ fileName);}
+	public void tellTheUserTheMazeIsLoaded(String fileName, String mazeName) {
+		out.println("Maze: "+mazeName+ " has been loaded from:"+ fileName);
+		out.flush();
+	}
 	
 	@Override
-	public void tellTheUsersizeOfMazeInRam(String mazeName,Double size) {out.println("The size of maze: "+mazeName+" in ram memory is:" +size+"b");}
+	public void tellTheUsersizeOfMazeInRam(String mazeName,Double size) {
+		out.println("The size of maze: "+mazeName+" in ram memory is:" +size+"b");
+		out.flush();}
 	
 	@Override
-	public void tellTheUsersizeOfMazeInFile(String fileName, double sizeOfFile) {out.println("The size of file: "+fileName+" is: "+sizeOfFile+"b");	}
+	public void tellTheUsersizeOfMazeInFile(String fileName, double sizeOfFile) {
+		out.println("The size of file: "+fileName+" is: "+sizeOfFile+"b");	
+		out.flush();}
 	
 	@Override
-	public void tellTheUserSolutionIsReady(String mazeName) {out.println("Solution for "+mazeName+" is Ready, you can take it!");}
+	public void tellTheUserSolutionIsReady(String mazeName) {
+		out.println("Solution for "+mazeName+" is Ready, you can take it!");
+		out.flush();}
 	
 	@Override
 	public void printSolutionToUser(String mazeName,Solution<Position> solution) {
 		out.println("Solution of: "+mazeName+"\n");
-		for (State<Position> p: solution.getSolution()){out.println(p.getCameFromAction() + " To: "+p.toString());}
+		out.flush();
+		for (State<Position> p: solution.getSolution()){out.println(p.getCameFromAction() + " To: "+p.toString());
+		out.flush();}
 	}
 	
 	@Override
@@ -136,11 +158,15 @@ public class MyView implements View {
 	public void setCommandsMenu(String cliMenu) {
 		this.cliMenu = cliMenu;
 		if(cli!=null)
+		{
 			cli.setCLIMenu(cliMenu);
+		}
+			
 	}
 	@Override
 	public void errorNoticeToUser(String s) {
-		System.out.println("Error:\n"+s);
+		out.println("Error:\n"+s);
+		out.flush();
 		
 	}
 	
