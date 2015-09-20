@@ -85,9 +85,9 @@ public class MyModel implements Model {
 			@Override
 			public void run() {
 				Maze3dGenerator maze = new MyMaze3dGenerator();
-				if(generator.equals("MyMaze3dGenerator"))
+				if(generator.equals("mymaze3dgenerator"))
 					maze = new MyMaze3dGenerator();
-				else if(generator.equals("SimpleMazeGenerator"))
+				else if(generator.equals("simplemazegenerator"))
 					maze = new SimpleMaze3dGenerator();
 				else 
 					maze = new MyMaze3dGenerator();
@@ -125,7 +125,7 @@ public class MyModel implements Model {
 		{
 			Maze3d maze = maze3dMap.get(mazeName);
 			//Floors
-			if(axe.equals("X"))
+			if(axe.equals("x"))
 			{
 				if(  (new Integer(index)) >=0 && (new Integer(index)) < maze.getMaze().length)
 				{
@@ -134,7 +134,7 @@ public class MyModel implements Model {
 				else{errorNoticeToControlelr("illegal index, llegal indexes are:0-"+maze.getMaze().length);}
 			}
 			//Lines
-			else if(axe.equals("Y"))
+			else if(axe.equals("y"))
 			{
 				if(  (new Integer(index)) >=0 && (new Integer(index)) < maze.getMaze()[0].length)
 				{
@@ -143,7 +143,7 @@ public class MyModel implements Model {
 				else{errorNoticeToControlelr("illegal index, llegal indexes are:0-"+maze.getMaze()[0].length);}
 			}
 			//Columns
-			else if(axe.equals("Z"))
+			else if(axe.equals("z"))
 			{
 				if(  (new Integer(index)) >=0 && (new Integer(index)) < maze.getMaze()[0][0].length)
 				{
@@ -282,13 +282,13 @@ public class MyModel implements Model {
 						controller.solutionIsReady(mazeName);
 					else
 					{
-						if(algorithm.equals("BFS"))
+						if(algorithm.equals("bfs"))
 						{		
 							Solution<Position> solutionToAdd = d.solveSearchableMazeWithBFS(searchableMaze);
 							solutionMap.put(mazeName, solutionToAdd);
 							controller.solutionIsReady(mazeName);
 						}
-						else if(algorithm.equals("A*"))
+						else if(algorithm.equals("a*"))
 						{
 							Solution<Position> solutionToAdd = d.solveSearchableMazeWithAstarByManhatenDistance(searchableMaze);
 							solutionMap.put(mazeName, solutionToAdd);

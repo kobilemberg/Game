@@ -113,8 +113,8 @@ String cliMenu;
 				//Print Menu (cliMenu). 
 				if (!cliMenu.equals(""))
 				{
-					System.out.println("	******************************Menu******************************");
-					System.out.println(cliMenu);
+					System.out.println("Please enter the next command: *");
+					//System.out.println(cliMenu);
 				}
 				
 				inputLineString = scanner.nextLine();
@@ -147,8 +147,4 @@ String cliMenu;
 		commandsStrings = new HashSet<>(commands.keySet());}
 
 	public void setCLIMenu(String cliMenu) {this.cliMenu=cliMenu;}
-
-	
-	
-	
 }
