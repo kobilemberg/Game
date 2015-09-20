@@ -26,7 +26,10 @@ HashSet<String> commandsStrings;
 String cliMenu;
 //Constructors
 	/**
-	 * Instantiates a new  my own maze3d generator.
+	 * Instantiates a new  my own maze3d generator with given BufferReader,PrintWriter,HasMap for commands
+	 * @param in BufferReader represent the input source
+	 * @param out PrintWriter represent the output source
+	 * @param commands HashMap<String,Command> represent the commands hashmap
 	 */
 	public CLI(BufferedReader in, PrintWriter out, HashMap<String,Command> commands) {
 		super();
@@ -35,7 +38,9 @@ String cliMenu;
 		this.commands=commands;
 		commandsStrings = new HashSet<>(commands.keySet());
 	}
-
+	/**
+	 * This method will start to run the cli
+	 */
 	public void start()
 	{
 		@SuppressWarnings("resource")
@@ -100,7 +105,7 @@ String cliMenu;
 			//if we didn't see command after removing all the words we will notice
 			if(!commands.containsKey(commandString))
 				{System.out.println("Enter a valid command. Enter command 'menu' if you don't remember the commands. ");}
-			
+				
 			inputLineString = ""; 
 			// Input command. 
 			// While input is not valid ("" or "    "..), do it again.
@@ -126,28 +131,57 @@ String cliMenu;
 		System.out.println("Exiting from the program...Bye!");
 	}
 	@Override 
+	/**
+	 * this method will execute start() method as runnable task
+	 * @see java.lang.Runnable#run()
+	 */
 	public void run() {
 		System.out.println("Running Run() Method of CLI class" );
 		start();	
 	}
-
+	
+	/**
+	 * This method will return the input source as BufferReader
+	 * @return BufferReader represent the input source
+	 */
 	public BufferedReader getIn() {return in;}
-
+	/**
+	 * This method will set the input source as BufferReader
+	 * @param in BufferReader represent the input source to set
+	 */
 	public void setIn(BufferedReader in) {this.in = in;}
-
+	/**
+	 * This method will return the output source as PrintWriter
+	 * @return PrintWriter represent the output source
+	 */
 	public PrintWriter getOut() {return out;}
-
+	/**
+	 * This method will set the output source as PrintWriter
+	 * @param out PrintWriter represent the output source to set
+	 */
 	public void setOut(PrintWriter out) {this.out = out;}
-
+	/**
+	 * This method will return the command map as HashMap<String, Command> 
+	 * @return HashMap<String, Command> represent the commands map
+	 */
 	public HashMap<String, Command> getCommands() {return commands;}
-
+	/**
+	 * This method will set the command map as HashMap<String, Command> 
+	 * @param commands HashMap<String, Command> represent the commands map
+	 */
 	public void setCommands(HashMap<String, Command> commands) 
 	{
 		this.commands = commands;
-		commandsStrings = new HashSet<>(commands.keySet());}
-
+		commandsStrings = new HashSet<>(commands.keySet());
+	}
+	/**
+	 * This method will set the cli menu
+	 * @param cliMenu represent the menu of the cli
+	 */
 	public void setCLIMenu(String cliMenu) {this.cliMenu=cliMenu;}
-	 
+	/**
+	 * This method will print the cliMenu to the screen
+	 */
 	public void printMenu(){
 		//Print Menu (cliMenu). 
 		if (!cliMenu.equals(""))
