@@ -77,26 +77,49 @@ public interface Model {
 	public void loadAndDeCompressedMazeToFile(String fileName, String mazeName) throws IOException;
 
 
-
+	/**
+	* This method will return the size of maze with mazeName object in ramdisk
+	* @param mazeName String represent instance name
+	* @return double represent the size of maze with mazeName object in ramdisk
+	*/
 	public double getSizeOfMazeInRam(String mazeName);
 
-
-
+	
+	/**
+	* This method will return the size of file that contains maze
+	* @param fileName String represent the file name to check
+	* @return double represent the size of file with name fileName
+	*/
 	public double getSizeOfMazeInFile(String fileName);
 
 
-
+	/**
+	* This method will solve maze with given maze and algorithm
+	* @param mazeName String represent the name of the maze to solve.
+	* @param algorithm String represent the algorithm to solve with
+	*/
 	public void solveMaze(String mazeName, String algorithm);
 
 
-
+	/**
+	* This method will return solution of maze with given maze name
+	* @param mazeName String represent the name of the maze to solve.
+	* @return the solution of the maze named mazeName
+	*/
 	public Solution<Position> getSolutionOfMaze(String mazeName);
 
-
+	/**
+	* This close all files and threads and will terminate the model activity
+	*/
 	public void exit();
 
 
-
+	/**
+	* This boolean method returns true if the maze with name mazeName has been loaded
+	* @param mazeName String represent the mazeName to check if loaded
+	* @return True if the maze exists in the ram disk
+	* @return False if maze is not exists in the ram disk
+	*/
 	public boolean isLoaded(String mazeName);
 
 }
