@@ -147,7 +147,7 @@ String cliMenu;
 		commandsStrings = new HashSet<>(commands.keySet());}
 
 	public void setCLIMenu(String cliMenu) {this.cliMenu=cliMenu;}
-	
+	 
 	public void printMenu(){
 		//Print Menu (cliMenu). 
 		if (!cliMenu.equals(""))
