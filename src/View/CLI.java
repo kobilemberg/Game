@@ -47,12 +47,7 @@ String cliMenu;
 		// Input command. 
 		// While input is not valid ("" or "    "..), do it again.
 		while (inputLineString.length() == 0){
-			//Print Menu (cliMenu). 
-			if (!cliMenu.equals(""))
-			{
-				System.out.println("	******************************Menu******************************");
-				System.out.println(cliMenu);
-			}
+			printMenu();
 			
 			inputLineString = scanner.nextLine();
 			inputLineString = inputLineString.toLowerCase().replaceAll("\\s+", " ").trim();
@@ -104,7 +99,7 @@ String cliMenu;
 			
 			//if we didn't see command after removing all the words we will notice
 			if(!commands.containsKey(commandString))
-				{System.out.println("Enter a valid command.");}
+				{System.out.println("Enter a valid command. Enter command 'menu' if you don't remember the commands. ");}
 			
 			inputLineString = ""; 
 			// Input command. 
@@ -113,13 +108,18 @@ String cliMenu;
 				//Print Menu (cliMenu). 
 				if (!cliMenu.equals(""))
 				{
-					System.out.println("Please enter the next command: *");
+					System.out.println("Please enter the next command: ");
 					//System.out.println(cliMenu);
 				}
 				
 				inputLineString = scanner.nextLine();
 				inputLineString = inputLineString.toLowerCase().replaceAll("\\s+", " ").trim();
 				inputLineAsArray = inputLineString.split(" ");
+				if (inputLineString.equals("menu"))
+				{
+					inputLineString = "";
+					printMenu();
+				}
 			}
 		}
 		commands.get(inputLineAsArray[0]).doCommand(inputLineAsArray);
@@ -147,4 +147,18 @@ String cliMenu;
 		commandsStrings = new HashSet<>(commands.keySet());}
 
 	public void setCLIMenu(String cliMenu) {this.cliMenu=cliMenu;}
+	
+	public void printMenu(){
+		//Print Menu (cliMenu). 
+		if (!cliMenu.equals(""))
+		{
+			System.out.println("	******************************Menu******************************");
+			System.out.println(cliMenu);
+		}
+		else
+		{
+			System.out.println("Error while printing the menu, menu seems to be empty.");
+		}
+		
+	}
 }
