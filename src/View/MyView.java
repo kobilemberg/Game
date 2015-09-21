@@ -29,19 +29,30 @@ public class MyView implements View {
 	PrintWriter out;
 
 	//Constructors
-		/**
-		 * Instantiates a new  my own maze3d generator.
-		 */
+	/**
+	 * Instantiates a new  my own maze3d generator.
+	 */
 	public MyView()
 	{
 		super();
 	}
+	/**
+	 * Instantiates a new  my own maze3d generator with given: BufferedReader in, PrintWriter out
+	 * @param in BufferedReader represent the input source
+	 * @param out PrintWriter represent the output source
+	 * @return new MyView as instance with BufferedReader in and PrintWriter out
+	 */
 	public MyView(BufferedReader in, PrintWriter out)
 	{
 		super();
 		this.in = in;
 		this.out=out;
 	}
+	/**
+	 * Instantiates a new  my own maze3d generator with given controller layer as instance
+	 * @param controller Controller represent the controller layer as instance
+	 * @return new MyView as instance with controller layer
+	 */
 	public MyView(Controller controller)
 	{
 		super();
@@ -50,12 +61,27 @@ public class MyView implements View {
 		this.out = new PrintWriter(System.out);
 		//cli = new CLI(new BufferedReader(new InputStreamReader(System.in)), new PrintWriter(System.out),controller.viewCommandMap);
 	}
+	/**
+	 * Instantiates a new  my own maze3d generator with given: controller layer as instance, BufferedReader in and PrintWriter out
+	 * @param controller Controller represent the controller layer as instance
+	 * @param in BufferedReader represent the input source
+	 * @param out PrintWriter represent the output source
+	 * @param viewCommandMap HashMap<String, Command> represent a commands to run
+	 * @return new MyView as instance with controller layer, BufferedReader in, PrintWriter out and commands 
+	 */
 	public MyView(Controller controller, BufferedReader in, PrintWriter out,HashMap<String, Command> viewCommandMap)
 	{
 		super();
 		this.controller = controller;
 		cli = new CLI(in, out,viewCommandMap);
 	}
+	/**
+	 * Instantiates a new  my own maze3d generator with given controller layer as instance
+	 * @param controller Controller represent the controller layer as instance
+	 * @param in BufferedReader represent the input source
+	 * @param out PrintWriter represent the output source
+	 * @return new MyView as instance with controller layer BufferedReader in and PrintWriter out
+	 */
 	public MyView(Controller controller, BufferedReader in, PrintWriter out)
 	{
 		super();
@@ -63,16 +89,25 @@ public class MyView implements View {
 		this.in = in;
 		this.out = out;
 	}
+	/**
+	* this method will set the controller to work with
+	* @param controller Controller represent the controller layer to work with
+	*/
 	public void setController(Controller controller)
 	{
 		this.controller = controller;
 	}
 	
 	@Override
+	/**
+	* this method will start to run the view layer
+	*/
 	public void start() {cli.start();}
 
 
-	
+	/**
+	* this method will print int[][] array
+	*/
 	public void printArr(int[][] arr)
 	{
 		String strOfMazeMatrix="";
