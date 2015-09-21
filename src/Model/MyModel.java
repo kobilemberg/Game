@@ -88,7 +88,7 @@ public class MyModel implements Model {
 		
 		if(floors.isEmpty()||lines.isEmpty()||columns.isEmpty())
 		{
-			throw new NullPointerException();
+			errorNoticeToControlelr("Wrong parameters, Usage:generate 3d maze <name> <generator> <other params>");
 		}
 		
 		Thread generateMazeThread = new Thread(new Runnable() {
