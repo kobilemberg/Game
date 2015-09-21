@@ -1,5 +1,5 @@
 package View;
-import java.io.IOException;
+
 /**
  * @author Kobi Lemberg, Alon Abadi
  * @version 1.0
@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.HashMap;
 
 import Controller.Command;
-import IO.MyCompressorOutputStream;
+
 import algorithms.mazeGenerators.Maze3d;
 import algorithms.mazeGenerators.Position;
 import algorithms.search.Solution;
